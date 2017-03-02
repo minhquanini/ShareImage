@@ -9,7 +9,7 @@ namespace ShareImage.Areas.Admin.Models
     public class LoginModel
     {
         [Required(ErrorMessage="Nhập vào User Name")]
-        public string UserName { set; get; }
+        public string Username { set; get; }
 
         [Required(ErrorMessage="Nhập vào PassWord")]
         public string Password { set; get; }

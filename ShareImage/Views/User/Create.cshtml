@@ -1,0 +1,85 @@
+﻿@model Model.EF.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Client/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Content/Client/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/Client/vendor/jquery/jquery.min.js"></script>
+    <title>Create</title>
+</head>
+<body>
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+
+            <div class="panel panel-body text-center"><h2>Đăng Ký</h2></div>
+
+            @Html.ValidationSummary(true)
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Username)
+                        @Html.ValidationMessageFor(model => model.Username)
+                    </div>
+                </div>*@
+            <div class="form-group">
+                @Html.LabelFor(model => model.Username)
+                @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @id = "email", @placeholder = "Nhập vào User Name" })
+                @Html.ValidationMessageFor(model => model.Username)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password)        
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control", @id = "password", @placeholder = "Nhập vào Password" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Fullname)
+                
+                    @Html.TextBoxFor(model => model.Fullname, new { @class = "form-control", @placeholder = "Nhập vào Họ Tên" })
+                    @Html.ValidationMessageFor(model => model.Fullname)
+                
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Birthday)
+                
+                    @Html.TextBoxFor(model => model.Birthday, new { @class = "form-control", @type="date", @placeholder = "Chọn ngày sinh" })
+                    @Html.ValidationMessageFor(model => model.Birthday)
+                
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email)
+                
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Nhập vào Email" })
+                    @Html.ValidationMessageFor(model => model.Email)
+               
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-4 ">
+                    <input type="submit" value="Đăng Ký Thành Viên" class="btn btn-success" />
+                </div>
+                <div class="col-md-offset-6 btn btn-default">
+                    @Html.ActionLink("Trở Về","Index","User")
+                </div>
+            </div>
+
+        }
+    </div>
+    
+</body>
+</html>

@@ -21,7 +21,7 @@
             @Html.AntiForgeryToken()
 
 
-            <div class="panel panel-body text-center"><h2>Đăng Ký</h2></div>
+            <div class="panel page-header text-center"><h2>Đăng Ký Thành Viên</h2></div>
 
             @Html.ValidationSummary(true)
             @*<div class="form-group">
@@ -54,7 +54,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Birthday)
                 
-                    @Html.TextBoxFor(model => model.Birthday, new { @class = "form-control", @type="date", @placeholder = "Chọn ngày sinh" })
+                    @Html.TextBoxFor(model => model.Birthday, new { @class = "form-control", @type="date" })
                     @Html.ValidationMessageFor(model => model.Birthday)
                 
             </div>
@@ -70,12 +70,14 @@
 
 
             <div class="form-group">
-                <div class="col-md-offset-4 ">
-                    <input type="submit" value="Đăng Ký Thành Viên" class="btn btn-success" />
+                <div class="col-md-offset-5 ">
+                    <input type="submit" value="Đăng Ký" class="btn btn-success" />
+                    <input type="button" value="Trở về" class="btn btn-default" onclick="location.href='@Url.Action("Index", "User")'" />
                 </div>
-                <div class="col-md-offset-6 btn btn-default">
+                @*<div class="col-md-offset-6 btn btn-default">
                     @Html.ActionLink("Trở Về","Index","User")
-                </div>
+                </div>*@
+                
             </div>
 
         }

@@ -1,0 +1,71 @@
+﻿@model Model.EF.User
+
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    
+}
+@section header
+{
+    Cập nhật thông tin thành viên
+}
+
+<div class="container-fluid">
+    @using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+
+
+      
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.UserID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Username)      
+            @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password)   
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password)   
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fullname)
+                @Html.TextBoxFor(model => model.Fullname, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Fullname)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Birthday)
+                @Html.TextBoxFor(model => model.Birthday, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Birthday)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email)
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsAdmin)
+                @Html.TextBoxFor(model => model.IsAdmin, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IsAdmin)
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-5">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <input type="button" value="Trở về" class="btn btn-default" onclick="location.href='@Url.Action("Index", "Home")'" />
+            </div>
+        </div>
+
+    }
+
+</div>

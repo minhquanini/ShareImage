@@ -22,6 +22,7 @@
                         <thead>
                             <tr>
                                 <th>Tài khoản</th>
+                                <th>Mật khẩu</th>
                                 <th>Họ Tên</th>
                                 <th>Ngày Sinh</th>
                                 <th>Email</th>
@@ -32,24 +33,31 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr>
+                                <tr id="row_@item.UserID">
                                     <td>@item.Username</td>
+                                    <td>@item.Password</td>
                                     <td>@item.Fullname</td>
                                     <td>@item.Birthday</td>
                                     <td>@item.Email</td>
                                     <td>
                                         @if (@item.IsAdmin == 1)
                                         {
-                                            <p class="fa fa-check center"></p>
+                                            <p class="fa fa-check"></p>
                                         }
                                         else
                                         {
-                                            <p class="fa fa-times text-center"></p>
+                                            <p class="fa fa-times"></p>
                                         }
                                     </td>
                                     <td>
-                                        <a href="/User/Edit/@item.UserID">Sửa</a>
-                                        <a href="/User/Delete/@item.UserID">Xóa</a>
+                                        <a href="/Admin/Home/Edit/@item.UserID">Sửa</a>
+                                        |
+                                        @Ajax.ActionLink("Xóa", "Delete", new { @userid = item.UserID }, new AjaxOptions
+                                   {
+                                       Confirm = "Bạn có chắc muốn xóa thành viên này?",
+                                       OnComplete = "$('#row_" + @item.UserID + "').remove()",
+                                       HttpMethod = "Delete"
+                                   })
                                     </td>
                                 </tr>
                             }

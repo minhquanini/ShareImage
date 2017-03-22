@@ -1,0 +1,48 @@
+﻿@*@model Model.EF.User*@
+
+<div class="header-top-strip">
+    <div class="container">
+        <div class="header-top-left">
+            <p><a href="http://www.ctu.edu.vn" target="_blank" >Can Tho University</a> | <a  href="http://www.cit.ctu.edu.vn" target="_blank"> Khoa CNTT & TT</a> </p>  
+        </div>
+        
+            @{
+                var session = (ShareImage.Common.UserLogin)Session[ShareImage.Common.CommonConstants.USER_SESSION];
+            }
+           @if (session == null)
+           {
+            <div class="header-top-right">
+                <input type="button" value="Đăng ký" class="btn btn-default" onclick="location.href = '@Url.Action("Register", "User")'" />
+                <input type="button" value="Đăng Nhập" class="btn btn-info" onclick="location.href = '@Url.Action("Login", "User")'" />
+            </div>
+           }
+           else
+           {
+
+                <div class="header-top-right">
+                    
+                        @*Tài khoản: 
+                        |
+                        @Html.ActionLink("Đăng xuất", "Logout", "User")*@
+
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                            @session.UserName &nbsp;
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="font-size:larger">
+                            <li>@Html.ActionLink("Đăng xuất", "Logout", "User")</li>
+                            
+                        </ul>
+                    </div>
+                
+                        
+                </div>
+
+           }
+
+   
+        </div>
+
+    </div>
+

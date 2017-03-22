@@ -7,22 +7,26 @@ using System.Web.Mvc;
 using PagedList;
 using Model.EF;
 
+
 namespace ShareImage.Areas.Admin.Controllers
 {
     public class HomeController : BaseController
     {
         // GET: Admin/Home
-        public ActionResult Index(int page=1,int pageSize=5)
+        public ActionResult Index(string searchstring,int page=1,int pageSize=5)
         {
             var dao = new UserDao();
-            
-            var model = dao.ListAllPaging(page, pageSize);
+
+            var model = dao.ListAllPaging(searchstring, page, pageSize);
+            ViewBag.searchstring = searchstring;
             return View(model);
         }
         [HttpGet]
         public ActionResult Edit(int id)
         {
+            
             var user = new UserDao().ViewDetail(id);
+            //SetViewBag(user.IsAdmin);
             return View(user);
         }
         [HttpPost]
@@ -41,6 +45,7 @@ namespace ShareImage.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Sửa thất bại!");
                 }
             }
+            //SetViewBag(user.IsAdmin);
             return View("Index");
         }
         [HttpDelete]
@@ -48,6 +53,14 @@ namespace ShareImage.Areas.Admin.Controllers
         {
             new UserDao().Delete(userid);
             return RedirectToAction("Index");
+        }
+
+
+        public ActionResult ListFB(int page = 1, int pageSize = 5)
+        {
+            var dao = new FeedbackDao();
+            var model = dao.ListAllPaging(page, pageSize);
+            return View(model);
         }
     }
 }

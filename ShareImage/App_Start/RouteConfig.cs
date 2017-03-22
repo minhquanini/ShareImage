@@ -17,7 +17,8 @@ namespace ShareImage
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "User", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Homeuser", action = "Index", id = UrlParameter.Optional }
+                
             );
 
             routes.MapRoute(
@@ -25,6 +26,18 @@ namespace ShareImage
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional }
            );
+
+            routes.MapRoute(
+              name: "Login",
+              url: "{controller}/{action}/{id}",
+              defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional }
+          );
+
+            routes.MapRoute(
+              name: "UpPost",
+              url: "{controller}/{action}/{id}",
+              defaults: new { controller = "Post", action = "UpPost", id = UrlParameter.Optional }
+          );
 
         }
     }

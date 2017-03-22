@@ -45,6 +45,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
       <Private>True</Private>
@@ -204,6 +208,114 @@
     <Content Include="Content\Bootstrap\bootstrap-reboot.min.css" />
     <Content Include="Content\Bootstrap\bootstrap.css" />
     <Content Include="Content\Bootstrap\bootstrap.min.css" />
+    <Content Include="Content\Client\css\bootstrap.css" />
+    <Content Include="Content\Client\css\flexslider.css" />
+    <Content Include="Content\Client\css\font-awesome.min.css" />
+    <Content Include="Content\Client\css\menu.css" />
+    <Content Include="Content\Client\css\popuo-box.css" />
+    <Content Include="Content\Client\css\style.css" />
+    <Content Include="Content\Client\images\150x50.jpg" />
+    <Content Include="Content\Client\images\200x300.jpg" />
+    <Content Include="Content\Client\images\75x75.jpg" />
+    <Content Include="Content\Client\images\arr.png" />
+    <Content Include="Content\Client\images\b1.jpg" />
+    <Content Include="Content\Client\images\b2.jpg" />
+    <Content Include="Content\Client\images\b3.jpg" />
+    <Content Include="Content\Client\images\b4.jpg" />
+    <Content Include="Content\Client\images\b5.jpg" />
+    <Content Include="Content\Client\images\b6.jpg" />
+    <Content Include="Content\Client\images\b7.jpg" />
+    <Content Include="Content\Client\images\b8.jpg" />
+    <Content Include="Content\Client\images\book-a-smile.jpg" />
+    <Content Include="Content\Client\images\c1.jpg" />
+    <Content Include="Content\Client\images\c2.jpg" />
+    <Content Include="Content\Client\images\c3.jpg" />
+    <Content Include="Content\Client\images\e1.jpg" />
+    <Content Include="Content\Client\images\e2.jpg" />
+    <Content Include="Content\Client\images\e3.jpg" />
+    <Content Include="Content\Client\images\e4.jpg" />
+    <Content Include="Content\Client\images\e5.jpg" />
+    <Content Include="Content\Client\images\evenesingle.jpg" />
+    <Content Include="Content\Client\images\event-1.jpg" />
+    <Content Include="Content\Client\images\event-2.jpg" />
+    <Content Include="Content\Client\images\event-3.jpg" />
+    <Content Include="Content\Client\images\event-single.jpg" />
+    <Content Include="Content\Client\images\f1.jpg" />
+    <Content Include="Content\Client\images\f2.jpg" />
+    <Content Include="Content\Client\images\f3.jpg" />
+    <Content Include="Content\Client\images\f4.jpg" />
+    <Content Include="Content\Client\images\f5.jpg" />
+    <Content Include="Content\Client\images\f6.jpg" />
+    <Content Include="Content\Client\images\footer-icon.png" />
+    <Content Include="Content\Client\images\gc.jpg" />
+    <Content Include="Content\Client\images\gif.png" />
+    <Content Include="Content\Client\images\icon1.png" />
+    <Content Include="Content\Client\images\m1.jpg" />
+    <Content Include="Content\Client\images\m10.jpg" />
+    <Content Include="Content\Client\images\m11.jpg" />
+    <Content Include="Content\Client\images\m12.jpg" />
+    <Content Include="Content\Client\images\m13.jpg" />
+    <Content Include="Content\Client\images\m14.jpg" />
+    <Content Include="Content\Client\images\m15.jpg" />
+    <Content Include="Content\Client\images\m2.jpg" />
+    <Content Include="Content\Client\images\m3.jpg" />
+    <Content Include="Content\Client\images\m4.jpg" />
+    <Content Include="Content\Client\images\m5.jpg" />
+    <Content Include="Content\Client\images\m6.jpg" />
+    <Content Include="Content\Client\images\m7.jpg" />
+    <Content Include="Content\Client\images\m8.jpg" />
+    <Content Include="Content\Client\images\m9.jpg" />
+    <Content Include="Content\Client\images\me1.jpg" />
+    <Content Include="Content\Client\images\me2.jpg" />
+    <Content Include="Content\Client\images\me3.jpg" />
+    <Content Include="Content\Client\images\me4.jpg" />
+    <Content Include="Content\Client\images\mf1.jpg" />
+    <Content Include="Content\Client\images\mf2.jpg" />
+    <Content Include="Content\Client\images\mf3.jpg" />
+    <Content Include="Content\Client\images\movie-show.jpg" />
+    <Content Include="Content\Client\images\ms1.jpg" />
+    <Content Include="Content\Client\images\ms2.jpg" />
+    <Content Include="Content\Client\images\ms3.jpg" />
+    <Content Include="Content\Client\images\ms4.jpg" />
+    <Content Include="Content\Client\images\payment.png" />
+    <Content Include="Content\Client\images\paypal.png" />
+    <Content Include="Content\Client\images\pic-1.jpg" />
+    <Content Include="Content\Client\images\pic-10.jpg" />
+    <Content Include="Content\Client\images\pic-12.jpg" />
+    <Content Include="Content\Client\images\pic-2.jpg" />
+    <Content Include="Content\Client\images\pic-3.jpg" />
+    <Content Include="Content\Client\images\pic-4.jpg" />
+    <Content Include="Content\Client\images\pic-5.jpg" />
+    <Content Include="Content\Client\images\pic-8.jpg" />
+    <Content Include="Content\Client\images\pic-9.jpg" />
+    <Content Include="Content\Client\images\pic1.jpg" />
+    <Content Include="Content\Client\images\pic2.jpg" />
+    <Content Include="Content\Client\images\pic3.jpg" />
+    <Content Include="Content\Client\images\pic4.jpg" />
+    <Content Include="Content\Client\images\public.jpg" />
+    <Content Include="Content\Client\images\r1.jpg" />
+    <Content Include="Content\Client\images\r2.jpg" />
+    <Content Include="Content\Client\images\r3.jpg" />
+    <Content Include="Content\Client\images\r4.jpg" />
+    <Content Include="Content\Client\images\r5.jpg" />
+    <Content Include="Content\Client\images\r6.jpg" />
+    <Content Include="Content\Client\images\sport-1.jpg" />
+    <Content Include="Content\Client\images\sport-2.jpg" />
+    <Content Include="Content\Client\images\sport-3.jpg" />
+    <Content Include="Content\Client\images\vocher.jpg" />
+    <Content Include="Content\Client\images\ws.jpg" />
+    <Content Include="Content\Client\js\bootstrap.min.js" />
+    <Content Include="Content\Client\js\easing.js" />
+    <Content Include="Content\Client\js\easyResponsiveTabs.js" />
+    <Content Include="Content\Client\js\jquery.flexisel.js" />
+    <Content Include="Content\Client\js\jquery.flexslider.js" />
+    <Content Include="Content\Client\js\jquery.leanModal.min.js" />
+    <Content Include="Content\Client\js\jquery.magnific-popup.js" />
+    <Content Include="Content\Client\js\jquery.min.js" />
+    <Content Include="Content\Client\js\megamenu.js" />
+    <Content Include="Content\Client\js\move-top.js" />
+    <Content Include="Content\Client\js\responsive-tabs.js" />
+    <Content Include="Content\Client\js\responsiveslides.min.js" />
     <Content Include="Content\Client\vendor\bootstrap-social\bootstrap-social.css" />
     <Content Include="Content\Client\vendor\bootstrap\css\bootstrap.css" />
     <Content Include="Content\Client\vendor\bootstrap\css\bootstrap.min.css" />
@@ -406,6 +518,14 @@
     <Content Include="Content\Bootstrap\bootstrap.min.css.map" />
     <Content Include="Content\Bootstrap\bootstrap.css.map" />
     <Content Include="Areas\Admin\Views\Home\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Navigation.cshtml" />
+    <Content Include="Content\Client\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Client\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Client\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Client\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Client\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Client\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Views\Home\ListFB.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -431,11 +551,16 @@
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeuserController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FeedbackModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -444,7 +569,13 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage.cshtml" />
     <Content Include="Views\Homeuser\Index.cshtml" />
+    <Content Include="Views\Shared\Menu.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\Post\UpPost.cshtml" />
+    <Content Include="Views\Feedback\Feedback.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -455,6 +586,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Images\" />
+    <Folder Include="Picture\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

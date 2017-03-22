@@ -52,11 +52,17 @@
                 @Html.ValidationMessageFor(model => model.Email)
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.IsAdmin)
                 @Html.TextBoxFor(model => model.IsAdmin, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IsAdmin)
-        </div>
+        </div>*@
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IsAdmin)
+        @Html.DropDownListFor(model => model.IsAdmin, new SelectList("01") ,new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.IsAdmin)
+    </div>
 
 
         <div class="form-group">

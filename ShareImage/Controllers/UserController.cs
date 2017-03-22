@@ -1,5 +1,6 @@
 ﻿using Model.Dao;
 using Model.EF;
+using ShareImage.Common;
 using ShareImage.Models;
 using System;
 using System.Collections.Generic;
@@ -18,11 +19,7 @@ namespace ShareImage.Controllers
         {
             return View();
         }
-        //[HttpGet]
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
+        
         [HttpPost]
         public ActionResult Register(RegisterModel model)
         {
@@ -65,6 +62,60 @@ namespace ShareImage.Controllers
             }
             return View(model);
         }
+
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                 var dao = new UserDao();
+                var result = dao.Login(model.Username, model.Password);
+                if(result==1)
+                {
+                    var user = dao.GetByID(model.Username);
+                    var userSession = new UserLogin();
+                    userSession.UserName = user.Username;
+                    userSession.UserID =user.UserID;
+
+                    Session.Add(CommonConstants.USER_SESSION,userSession);
+
+                    return RedirectToAction("Index", "Homeuser");
+                }else if(result==0)
+                    {
+                        ModelState.AddModelError("", "Tên đăng nhập không đúng!");
+                    }
+                    else if(result==2)
+                    {
+                     ModelState.AddModelError("","Mật khẩu không đúng");
+                    }
+                
+                }
+            return View(model);
+            }
+            
+        
+        public ActionResult Logout()
+        {
+            Session[CommonConstants.USER_SESSION] = null;
+            return RedirectToAction("Index","Homeuser");
+        }
+
+
+
+        //public ActionResult Post()
+        //{
+        //    return View();
+        //}
+
+        }
+
+
+    
         
     }
-}

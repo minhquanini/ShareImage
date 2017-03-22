@@ -1,0 +1,36 @@
+﻿@model List<Model.EF.Category>
+
+<ul class="nav navbar-nav">
+    <li class="nav navbar-nav"><a href="/Homeuser/Index">Trang chủ</a></li>
+    
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="#">@item.CategoryName</a>
+        </li>
+    }
+
+    @{
+        var session =(ShareImage.Common.UserLogin) Session[ShareImage.Common.CommonConstants.USER_SESSION];
+    }
+
+    @if (session == null)
+    {
+        <li class="nav navbar-nav">
+            @*<a href="#">Chưa đăng nhập</a>*@
+        </li>
+    }
+    else
+    {
+        <li class="nav navbar-nav">
+            <a href="/Post/UpPost">Đăng bài</a>
+        </li>
+
+        <li class="nav navbar-nav">
+            <a href="/Feedback/Feedback">Phản hồi</a>
+        </li>
+    }
+   
+    
+
+</ul>

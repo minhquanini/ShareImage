@@ -1,4 +1,5 @@
-﻿@model List<Model.EF.Post>
+﻿@*@model List<Model.EF.Post>*@
+@model List<ShareImage.Models.PostViewModel>
 
            
 
@@ -8,45 +9,49 @@
 }
 
 
-@*
 
-    @foreach (var imgPath in Directory.GetFiles(Server.MapPath("~/Images")))
+    @foreach (var item in Model.OrderByDescending(x => x.CreateDate))
     {
-        var img = new FileInfo(imgPath);
-        <img src="@Url.Content(String.Format("~/Images/{0}", img.Name))" />
-        <hr />
+
+        
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3><b>TÀI KHOẢN:</b> @item.Username</h3>
+                            <h3><b>NGÀY ĐĂNG:</b>  @item.CreateDate</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="text-center">
+                                <img src="@Url.Content(item.Picture)" class="rounded mx-auto d-block" alt="@item.Description" style="width:900px;height:600px" />
+                            </div>
+                            <hr />
+                            <div class="panel-footer">
+                                <h2><b>TIÊU ĐỀ:</b>  @item.Title</h2>
+                            </div>
+                        </div>
+                        ssdsd
+                    </div>
+
+                </div>
+            </div>
+
+
+        
+
+                    @*<div class="text-center">
+                <img src="@Url.Content(item.Picture)" class="rounded mx-auto d-block" alt="@item.Description" style="width:500px;height:400px" />
+                <h2>@item.Title</h2>
+
+                <hr />
+                <h3>@item.Username</h3>
+                <hr />
+                <h1>@item.CreateDate</h1>
+                <hr />
+            </div>*@
+
+
     }
-*@
-@*
-    @{
-        int i = 0;
-    }
 
-        @foreach (var item in Model.OrderBy(x=>x.CreateDate))
-        {
-
-            while (true)
-            {
-                string[] imgPath = Directory.GetFiles(Server.MapPath("~/Images"));
-                var img = new FileInfo(imgPath[i]);
-                <img src="@Url.Content(String.Format("~/Images/{0}", img.Name))" style="width:400px;height:400px"/>
-
-                i++;
-                break;
-            }
-
-            <h2>@item.Title</h2>
-            <h2>@item.Picture</h2>
-            <hr />
-
-
-        }
-
-*@
-    @foreach (var item in Model)
-    {
-        <img src="@Url.Content(item.Picture)" alt="@item.Description" style="width:600px;height:400px" />
-        @item.Title
-    }
-
-
+    

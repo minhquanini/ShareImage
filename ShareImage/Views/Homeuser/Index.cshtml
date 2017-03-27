@@ -1,10 +1,52 @@
-﻿
+﻿@model List<Model.EF.Post>
+
+           
+
 @{
-    ViewBag.Title = "Trang chủ";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2>Index</h2>
 
-@*<img width="700px" height="500px" src="/Image/mario.jpeg" />*@
+@*
+
+    @foreach (var imgPath in Directory.GetFiles(Server.MapPath("~/Images")))
+    {
+        var img = new FileInfo(imgPath);
+        <img src="@Url.Content(String.Format("~/Images/{0}", img.Name))" />
+        <hr />
+    }
+*@
+@*
+    @{
+        int i = 0;
+    }
+
+        @foreach (var item in Model.OrderBy(x=>x.CreateDate))
+        {
+
+            while (true)
+            {
+                string[] imgPath = Directory.GetFiles(Server.MapPath("~/Images"));
+                var img = new FileInfo(imgPath[i]);
+                <img src="@Url.Content(String.Format("~/Images/{0}", img.Name))" style="width:400px;height:400px"/>
+
+                i++;
+                break;
+            }
+
+            <h2>@item.Title</h2>
+            <h2>@item.Picture</h2>
+            <hr />
+
+
+        }
+
+*@
+    @foreach (var item in Model)
+    {
+        <img src="@Url.Content(item.Picture)" alt="@item.Description" style="width:600px;height:400px" />
+        @item.Title
+    }
+
 

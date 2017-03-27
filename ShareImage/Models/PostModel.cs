@@ -31,7 +31,7 @@ namespace ShareImage.Models
         public int UserID { get; set; }
 
         
-        public IEnumerable<SelectListItem> CategoryName { get; set; }
+        //public IEnumerable<SelectListItem> CategoryName { get; set; }
 
         /*
         [Display(Name = "Loại ảnh")]

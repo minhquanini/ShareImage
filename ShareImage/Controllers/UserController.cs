@@ -85,6 +85,7 @@ namespace ShareImage.Controllers
 
                     Session.Add(CommonConstants.USER_SESSION,userSession);
 
+                    //Session["userid"] = userSession.UserID;
                     return RedirectToAction("Index", "Homeuser");
                 }else if(result==0)
                     {

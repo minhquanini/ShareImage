@@ -1,18 +1,19 @@
 ﻿@model ShareImage.Models.PostModel
 
+
 @{
     ViewBag.Title = "UpPost";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2>UpPost</h2>
+
 
 @using (Html.BeginForm("UpPost", "Post", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Đăng bài</h4>
+        <h2>Đăng bài</h2>
         <hr />
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -27,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-8">
-                @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Description)
             </div>
         </div>
@@ -35,9 +36,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Picture, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-4">
-                @Html.TextBoxFor(model => model.Picture, new { @class = "form-control", @type = "file", @name = "txtImg", @id = "txtImg" })
-                @*<button id="btnSelectImg">Chọn ảnh</button>*@
+                @*@Html.TextBoxFor(model => model.Picture, new { @class = "form-control", @type = "file", @name = "txtImg", @id = "txtImg" })
+                <button id="btnSelectImg">Chọn ảnh</button>
+                *@
+
+                <input id="Picture" title="Chọn ảnh" type="file" name="txtImg" />
                 @Html.ValidationMessageFor(model => model.Picture)
+
             </div>
         </div>
 
@@ -45,7 +50,7 @@
             @*@Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <span class="control-label col-md-2">Category Name</span>
             <div class="col-md-4">
-                @Html.DropDownList("CategoryName", (SelectList)ViewBag.CatList, new { @class = "form-control" })
+                @Html.DropDownList("CategoryID", (SelectList)ViewData["CategoryID"], new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CategoryID)
             </div>
         </div>
@@ -53,9 +58,9 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Đăng" class="btn btn-success" />
+                <input type="button" value="Trở về" class="btn btn-default" onclick="location.href='@Url.Action("Index", "Homeuser")'" />
             </div>
         </div>
     </div>
 }
 
-@*(SelectList)*@
